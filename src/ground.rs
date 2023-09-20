@@ -25,7 +25,7 @@ fn spawn_gltf(
     ass: Res<AssetServer>,
 ) {
     // note that we have to include the `Scene0` label
-    let my_gltf = ass.load("grass.glb#Scene0");
+    let my_gltf = ass.load("houses.glb#Scene0");
 
     // to position our 3d model, simply use the Transform
     // in the SceneBundle
