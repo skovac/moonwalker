@@ -14,7 +14,9 @@ fn spawn_sphere(
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
     commands.spawn(PbrBundle {
-        mesh: meshes.add(Mesh::from(shape::UVSphere { ..Default::default() })),
+        mesh: meshes.add(Mesh::from(shape::UVSphere {
+            ..Default::default()
+        })),
         material: materials.add(Color::rgb(0.8, 0.7, 0.6).into()),
         transform: Transform::from_xyz(0.0, 1.0, 0.0),
         ..default()

@@ -1,11 +1,13 @@
 use bevy::prelude::*;
 use bevy::window::CursorGrabMode;
+//use bevy::window::WindowMode;
+use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 
 mod cameras;
-mod ground;
-mod sphere;
 mod cube;
+mod ground;
 mod light;
+mod sphere;
 
 fn main() {
     App::new()
@@ -30,13 +32,13 @@ fn main() {
             sphere::Sphere,
             cube::Cube,
             light::Light,
+            LogDiagnosticsPlugin::default(),
+            FrameTimeDiagnosticsPlugin::default(),
         ))
         .run();
 }
 
-fn cursor_grab_system(
-    mut windows: Query<&mut Window>
-) {
+fn cursor_grab_system(mut windows: Query<&mut Window>) {
     let mut window = windows.single_mut();
     window.cursor.visible = false;
     window.cursor.grab_mode = CursorGrabMode::Locked;

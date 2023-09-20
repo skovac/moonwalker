@@ -20,10 +20,7 @@ fn spawn_ground(
     });
 }
 
-fn spawn_gltf(
-    mut commands: Commands,
-    ass: Res<AssetServer>,
-) {
+fn spawn_gltf(mut commands: Commands, ass: Res<AssetServer>) {
     // note that we have to include the `Scene0` label
     let my_gltf = ass.load("houses.glb#Scene0");
 
