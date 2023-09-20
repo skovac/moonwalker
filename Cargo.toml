@@ -1,6 +1,8 @@
 [package]
 name = "moonwalker"
 version = "0.0.1"
+description = "Learning project to get familiar with bevy."
+license = "MIT"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
