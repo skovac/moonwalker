@@ -5,7 +5,6 @@ pub struct Cube;
 impl Plugin for Cube {
     fn build(&self, app: &mut App) {
         app.add_systems(Startup, spawn_cube);
-            //.add_systems(Update, move_camera);
     }
 }
 

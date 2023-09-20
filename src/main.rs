@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy::window::CursorGrabMode;
+use bevy::window::{CursorGrabMode, WindowMode};
 
 mod cameras;
 mod ground;
@@ -16,6 +16,7 @@ fn main() {
                         title: "moonwalker".into(),
                         resolution: (640.0, 480.0).into(),
                         resizable: false,
+                        //mode: WindowMode::BorderlessFullscreen,
                         ..default()
                     }),
                     ..default()

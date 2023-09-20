@@ -4,8 +4,7 @@ pub struct Ground;
 
 impl Plugin for Ground {
     fn build(&self, app: &mut App) {
-        app.add_systems(Startup, spawn_ground);
-            //.add_systems(Update, move_camera);
+        app.add_systems(Startup, (spawn_ground, spawn_gltf));
     }
 }
 
@@ -18,5 +17,21 @@ fn spawn_ground(
         mesh: meshes.add(shape::Plane::from_size(500.0).into()),
         material: materials.add(Color::rgb(0.3, 0.5, 0.3).into()),
         ..default()
+    });
+}
+
+fn spawn_gltf(
+    mut commands: Commands,
+    ass: Res<AssetServer>,
+) {
+    // note that we have to include the `Scene0` label
+    let my_gltf = ass.load("grass.glb#Scene0");
+
+    // to position our 3d model, simply use the Transform
+    // in the SceneBundle
+    commands.spawn(SceneBundle {
+        scene: my_gltf,
+        transform: Transform::from_xyz(0.0, 4.0, 0.0),
+        ..Default::default()
     });
 }
