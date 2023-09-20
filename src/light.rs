@@ -5,7 +5,6 @@ pub struct Light;
 impl Plugin for Light {
     fn build(&self, app: &mut App) {
         app.add_systems(Startup, spawn_light);
-            //.add_systems(Update, move_camera);
     }
 }
 

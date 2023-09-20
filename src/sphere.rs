@@ -5,7 +5,6 @@ pub struct Sphere;
 impl Plugin for Sphere {
     fn build(&self, app: &mut App) {
         app.add_systems(Startup, spawn_sphere);
-            //.add_systems(Update, move_camera);
     }
 }
 
