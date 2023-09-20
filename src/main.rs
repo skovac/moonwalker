@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy::window::{CursorGrabMode, WindowMode};
+use bevy::window::CursorGrabMode;
 
 mod cameras;
 mod ground;
