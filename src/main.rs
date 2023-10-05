@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 use bevy::window::CursorGrabMode;
-//use bevy::window::WindowMode;
+use bevy::window::WindowMode;
 use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 
 mod cameras;
@@ -18,7 +18,7 @@ fn main() {
                         title: "moonwalker".into(),
                         resolution: (640.0, 480.0).into(),
                         resizable: false,
-                        //mode: WindowMode::BorderlessFullscreen,
+                        mode: WindowMode::BorderlessFullscreen,
                         ..default()
                     }),
                     ..default()
@@ -26,6 +26,7 @@ fn main() {
                 .build(),
         )
         .add_systems(Startup, cursor_grab_system)
+        .add_systems(Update, bevy::window::close_on_esc)
         .add_plugins((
             cameras::GameCameras,
             ground::Ground,
